@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Блог о Fraemvork angular</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Стили/r.c.f.css">
+  <link rel="stylesheet" href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Стили/footer%20filial.css">
+  <link rel="stylesheet" href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Стили/maps.css">
+  <link rel="stylesheet" href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Стили/layer%20filial.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+		@media screen and (max-width: 767px)
+		{
+			.sidenav
+				{
+					height: auto;
+					padding: 16px;
+				}
+			.row.content {height: max;}
+		}
+
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Мой блог о Framework angular</h4>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/index.html">Главная</a></li>
+        <li><a href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/the%20questions.html">Часто задаваемые вопросы и ответы на них</a></li>
+        <li class="active"><a href="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/fillials.html">Наши филиалы в городах</a></li>
+        <li><a href="#section3">Фотографии среды Framework angular</a></li>
+		<li><a href="file:///D:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/particles.js-master%20(Залипалка)/demo/Zalip.html">Залипалка</a></li>
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Введите что-нибудь для поиска...">
+        <span class="input-group-btn">
+  <button><img src="file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Картинки/лупа.png" 
+          style="vertical-align: middle"> Кнопка с рисунком</button></p>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>Последние сообщения</small></h4>
+      <hr>
+      <h2>Framework angular</h2>
+       <h5><span class="glyphicon glyphicon-time"></span> Отправлено Руслан, 17.12.2019, 18:25.</h5>
+      <h5><span class="label label-danger">Framework angular</span></h5><br>
+      <div id="pButton" class="col-md-9 col-md-push-3" >
+        <div class = "row">
+          <div class = "col-sm-4">
+            <div class="layer1">
+				<div class="col-9">
+	
+					<h4>Тут вы сможете увидеть все наши филиалы по стране</h4>
+					<div id="imap">
+						<a href="#" id="klgd">Калининград</a>
+						<a href="#" id="spb">Санкт-Петербург</a>
+						<a href="#" id="msk">Москва</a>
+					</div>
+				<div id="container"></div>
+			</div>
+			</div>
+          </div>
+        </div>
+      </div>
+      <script src="move.min.js"></script>
+		
+		<script src="jquery-1.8.2.min.js"></script>
+	    <script>
+			$(function()
+			{
+			// предварительная загрузка изображений
+				var klgd = $('<img />').attr('src','file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Картинки%20для%20филлиалов/klngr.png');
+				var msk = $('<img />').attr('src','file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Картинки%20для%20филлиалов/msk.png');
+				var spb = $('<img />').attr('src','file:///F:/М.Д.К%2008.01/2%20Семестр/Страничка%20для%20работы%20в%20техникуме/Картинки%20для%20филлиалов/spb.png');
+				$('div#imap > a').click(function(event){
+				var elId = $(this).attr('id');
+				switch(elId)
+				{
+					case 'klgd' : 
+						$('#container:not(:has(img))').append(klgd);
+					break;
+					case 'spb' :
+						$('#container:not(:has(img))').append(spb);
+					break; 
+					case 'msk' : 
+						$('#container:not(:has(img))').append(msk);
+					break; 
+					default: elImgURI = false;
+				}   
+				// ширина контейнера
+				var contwidth = $('#container').width();
+				var contheight = $('#container').height();
+				var w_mrg = contwidth/2 + "px";
+				var h_mrg = contheight/2 + "px";
+				$('#container').show();
+				$('#container').css({'margin-left':'-'+w_mrg});
+				event.preventDefault();
+				});
+				$('div#container').click(function(event){
+				$('#container img').remove();
+				$('#container').hide();
+				event.preventDefault();
+				});
+			});
+		</script>
+		
+<footer class="container-fluid">
+  <p>Страничка создана Русланом Шарафеевым из группы И.С.-233</p>
+</footer>
+
+</body>
+</html>
